@@ -29,22 +29,22 @@ main() {
     // Variables and array declaration
     std::array<int, 5> numberList;
     int largest;
-    int number;
-    
+    std::string number;
+    int numberInt;
+
     // Process
     for (int counter = 0; counter < 5; counter++) {
         std::cout << "Enter an integer: "; std::cin >> number;
-        numberList[counter] = number;
-            
-        try {
-            numberList = std::stoi(number);
 
+        try {
+            numberInt = std::stoi(number);
+            numberList[counter] = numberInt;
         } catch (std::invalid_argument) {
              std::cout << "This is not an integer, try again.";
         }
     }
     // call function
-            largest = identify(numberList);
+    largest = identify(numberList);
 
     // output
         std::cout << std::endl;
